@@ -1,10 +1,10 @@
-# Discipline Compliance Score (DCS)
+# Personal Habit System
 
-**A longitudinal scoring & analytics data product — self-architected capture, a 15-table relational model, and a versioned, deterministic scoring engine over first-party time-series data.**
+**A longitudinal scoring & analytics data project for self-assessment.  Uses a relational db, and a versioned, deterministic scoring engine over first-party time-series data.**
 
-DCS turns a daily self-assessment across four domains into a reproducible composite score (0–20). It's a personal project, but the engineering is the point: a hand-designed SQLAlchemy schema with Alembic migrations, an applicability engine that decides what's expected each day, and metric definitions that are **versioned** so historical results stay comparable when the rules change — every score reproduces deterministically from its inputs and the rule version in force.
+PHS turns a daily self-assessment across four domains into a reproducible composite score (0–20). It's a personal project, but the engineering is the point: a hand-designed SQLAlchemy schema with Alembic migrations, an applicability engine that decides what's expected each day, and metric definitions that are **versioned** so historical results stay comparable when the rules change.  Each score reproduces deterministically from its inputs and the rule version in force.
 
-> This repository documents the **system** — schema, scoring logic, and API. It contains no personal daily records; tracked items are described at the category level, and a separate trading module is intentionally out of scope.
+> This repository documents the **system** — schema, scoring logic, and API. It contains no personal daily records.  The tracked items are described at the category level.
 
 ---
 
@@ -13,7 +13,7 @@ DCS turns a daily self-assessment across four domains into a reproducible compos
 - **Self-collected longitudinal data** — daily observations since 2026-04-18 and growing, including a migrated markdown-journal era ingested into the model. Real time-series, not a static download.
 - **15-table normalized model** — clean separation of *catalogs* (what can be tracked) from *events* (what happened), so the schema scales as items are added, renamed, or retired.
 - **Two independent versioning systems** — Alembic migrations version the **schema**; a `rule_version` registry versions the **scoring rules**. Catalog membership is itself versioned (`rule_version_first` / `rule_version_last` on each activity).
-- **Deterministic, reproducible scoring** — each day's score is stamped with the rule version that produced it; re-scoring is idempotent and auditable. History never silently changes when the rules evolve (SCD/bitemporal thinking applied to *metrics*).
+- **Deterministic, reproducible scoring** — each day's score is stamped with the rule version that produced it; re-scoring is idempotent and auditable. History never changes when the rules evolve (SCD/bitemporal thinking applied to *metrics*).
 - **Dynamic applicability engine** — completion rates are measured against what was actually expected that day (daily / weekday / day-of-week via a bitmask, with holiday shifting and per-day exceptions).
 - **Stateful subsystems** — a multi-level streak engine with domain floors and a weighted-draw reward pool, both event-sourced.
 
@@ -167,7 +167,7 @@ So a Tuesday and a Saturday have genuinely different denominators, and completio
 
 ## Versioning & reproducibility (the centerpiece)
 
-Most personal trackers overwrite their rules, silently rewriting the meaning of every historical number. DCS versions everything:
+Most personal trackers overwrite their rules, silently rewriting the meaning of every historical number. PHS versions everything:
 
 - **Scoring rules** — the `rule_version` registry records each rule set with an `effective_from`/`effective_to` window and a changelog. This backup already holds **three real, dated versions** (e.g., a graduated physiology bonus replacing a flat perfect-day bonus; later item additions/renames with the scoring formula held constant).
 - **Score provenance** — every `day_score` is stamped with the `rule_version_id` that produced it, so a day scored under v2 stays a v2 score forever.
@@ -215,4 +215,4 @@ Because scoring is a pure function of `(events, rule_version, applicability)`, a
 
 ## Notes
 
-This repository documents the system — schema, scoring logic, applicability rules, and API. It excludes personal daily records; item-level detail is described only at the category level, and the trading module is out of scope. Design goals: reproducibility, historical comparability, and a clean separation between what is tracked and what is computed.
+This repository documents the system — schema, scoring logic, applicability rules, and API. It excludes personal daily records; item-level detail is described only at the category level. Design goals: reproducibility, historical comparability, and a clean separation between what is tracked and what is computed.
