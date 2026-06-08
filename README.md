@@ -43,7 +43,7 @@ Daily input ─► FastAPI service ─► SQLAlchemy ORM ─► SQLite
 
 Core scored model (the full schema also includes the streak, reward, and migration subsystems described below):
 
-```mermaid
+```
 erDiagram
     rule_version ||--o{ day            : "governs"
     rule_version ||--o{ day_score      : "stamps"
