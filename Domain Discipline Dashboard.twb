@@ -1,0 +1,391 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='lookback days' datatype='integer' name='[Parameter 3370016912789504]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+        <calculation class='tableau' formula='3' />
+        <range max='90' min='2' />
+      </column>
+    </datasource>
+    <datasource caption='tableau_dataset' inline='true' name='federated.17y94e0041bduw1528njy0t20j7r' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tableau_dataset' name='textscan.0fituog0dvdasw1fkbrcy0hm3733'>
+            <connection class='textscan' directory='C:/repos/PersonalHabitSystem' filename='tableau_dataset.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0fituog0dvdasw1fkbrcy0hm3733' name='tableau_dataset.csv' table='[tableau_dataset#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='calendar_date' ordinal='0' />
+            <column datatype='string' name='domain_name' ordinal='1' />
+            <column datatype='string' name='domain_score' ordinal='2' />
+            <column datatype='integer' name='weekday_flag' ordinal='3' />
+            <column datatype='string' name='previous_day_score' ordinal='4' />
+            <column datatype='string' name='previous_comparable_day_score' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calendar_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[calendar_date]</local-name>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias>calendar_date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>domain_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[domain_name]</local-name>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias>domain_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>domain_score</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[domain_score]</local-name>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias>domain_score</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weekday_flag</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[weekday_flag]</local-name>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias>weekday_flag</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>previous_day_score</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[previous_day_score]</local-name>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias>previous_day_score</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>previous_comparable_day_score</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[previous_comparable_day_score]</local-name>
+            <parent-name>[tableau_dataset.csv]</parent-name>
+            <remote-alias>previous_comparable_day_score</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' caption='*datefilter' datatype='integer' name='[Calculation_3370016913059841]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='if [calendar_date] &gt; dateadd(&apos;day&apos;, -1*[Parameters].[Parameter 3370016912789504], [calendar_date]) &#13;&#10;then 1 &#13;&#10;else 0 &#13;&#10;end' />
+      </column>
+      <column caption='tableau_dataset.csv' datatype='table' name='[__tableau_internal_object_id__].[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]' role='measure' type='quantitative' />
+      <column caption='Calendar Date' datatype='date' name='[calendar_date]' role='dimension' type='ordinal' />
+      <column caption='Domain Name' datatype='string' name='[domain_name]' role='dimension' type='nominal' />
+      <column aggregation='CountD' caption='Domain Score' datatype='real' datatype-customized='true' name='[domain_score]' role='measure' type='quantitative' />
+      <column caption='Previous Comparable Day Score' datatype='string' name='[previous_comparable_day_score]' role='dimension' type='nominal' />
+      <column caption='Previous Day Score' datatype='real' datatype-customized='true' name='[previous_day_score]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Weekday Flag' datatype='integer' name='[weekday_flag]' role='dimension' type='ordinal' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/l/AppData/Local/Temp/TableauTemp/#TableauTemp_1yiq3og0k1xhji12gostj18xfpkb.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='06/18/2026 01:51:17 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>calendar_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[calendar_date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>calendar_date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>tableau_dataset.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2042</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>domain_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[domain_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>domain_name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>tableau_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>domain_score</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[domain_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>domain_score</remote-alias>
+              <ordinal>2</ordinal>
+              <family>tableau_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>66</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>weekday_flag</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[weekday_flag]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>weekday_flag</remote-alias>
+              <ordinal>3</ordinal>
+              <family>tableau_dataset.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>previous_day_score</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[previous_day_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>previous_day_score</remote-alias>
+              <ordinal>4</ordinal>
+              <family>tableau_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>52</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>previous_comparable_day_score</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[previous_comparable_day_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>previous_comparable_day_score</remote-alias>
+              <ordinal>5</ordinal>
+              <family>tableau_dataset.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>51</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.784644' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.215356' show-structure='true' user-set-layout-v2='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='lookback days' datatype='integer' name='[Parameter 3370016912789504]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+          <range max='90' min='2' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='tableau_dataset.csv' id='tableau_dataset.csv_24E6660EA69C443C9B82B4AF36B50B14'>
+            <properties context=''>
+              <relation connection='textscan.0fituog0dvdasw1fkbrcy0hm3733' name='tableau_dataset.csv' table='[tableau_dataset#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='calendar_date' ordinal='0' />
+                  <column datatype='string' name='domain_name' ordinal='1' />
+                  <column datatype='string' name='domain_score' ordinal='2' />
+                  <column datatype='integer' name='weekday_flag' ordinal='3' />
+                  <column datatype='string' name='previous_day_score' ordinal='4' />
+                  <column datatype='string' name='previous_comparable_day_score' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='tableau_dataset' name='federated.17y94e0041bduw1528njy0t20j7r' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='lookback days' datatype='integer' name='[Parameter 3370016912789504]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+              <range max='90' min='2' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.17y94e0041bduw1528njy0t20j7r'>
+            <column aggregation='Sum' caption='*datefilter' datatype='integer' name='[Calculation_3370016913059841]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='if [calendar_date] &gt; dateadd(&apos;day&apos;, -1*[Parameters].[Parameter 3370016912789504], [calendar_date]) &#13;&#10;then 1 &#13;&#10;else 0 &#13;&#10;end' />
+            </column>
+            <column caption='Calendar Date' datatype='date' name='[calendar_date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_3370016913059841]' derivation='None' name='[none:Calculation_3370016913059841:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.17y94e0041bduw1528njy0t20j7r].[none:Calculation_3370016913059841:ok]'>
+            <groupfilter function='member' level='[none:Calculation_3370016913059841:ok]' member='1' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.17y94e0041bduw1528njy0t20j7r].[none:Calculation_3370016913059841:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{167DE5DE-A8A5-4327-837F-F7901EF5C30F}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.17y94e0041bduw1528njy0t20j7r].[none:Calculation_3370016913059841:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F051CCF9-C410-4971-BE17-3A4443E1FBD1}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAEFUlEQVR4nO3ZS29bVRiG0e/Ex3acxBha2jBB4v//IyQGTLiXpq3T+O7NgLYquEUiahrF
+      71oj+1iW9uA82reutdYKQp3c9o+64RjcOoDr6+tPOQ64F7cOAI6BAIjW3/cA4K683ad2Xfeh
+      X6s1AXDErv78o3a7fU1mX1W33dRqta7J2Wkt19v68mJS3//woyUQx6sbDGs66ev3Z1fV1qsa
+      Xwzr599eVdusa3/S1+XTr80AHK/JeFiLTV/fXs6q7wf18sWrejQb1slgXIOquphOq7vtRdh8
+      Pq/pdPqJhwyflyUQ0fqq293qttbcBvPgvdsD/N+b3cVi8ZHjJXg4+qq/z0lvs563B+Chswcg
+      mgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgC
+      IJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBo
+      AiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmA
+      aAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJ
+      gGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCi
+      CYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYA
+      ogmAaAIgmgCIdhDAcnFT8+ubavcxGvjM+n8/WCyXNelb/fTrTV2Mulptd9V1J1X7Vo8vn9Tg
+      PkYJd+RgBmi7bb28XtVw2Nf56ahaV7VYLGu/297H+OBOda21/1zttNZqtVrVeDyuruvePZ/P
+      5zWdTu98gHCXDmeANy/8fr+vqqr9fl+np6fvvsMxOdgDrG+u6perXT2eDmu9q9puN3Vxdlrz
+      14v65vLpfYwR7szBDDAaDWs2m9WL589quXxdm33VzWJRgxMnphyfgxmg+vOanXf1xdl3tVpt
+      ajQeVdvtal/dB/4OD9tBALv1prrxuAbV19nZm58HDj85TgcBbG6u6/mLqxoNR9V2rdpuXYN+
+      WK07qSePH93HGOHOHCzsu5O+ZueTWqzW1arqdHJebbcpV8Mco4/eA7x93HXdPz6/5R6AY3C4
+      CX7j/Zf9/c9wTJxtEk0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRA
+      NAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEE
+      QDQBEE0ARBMA0QRANAEQTQBEEwDR/gKupMtrHIqRFAAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
